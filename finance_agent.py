@@ -2,7 +2,6 @@ from phi.agent import Agent
 from phi.model.groq import Groq
 from phi.tools.yfinance import YFinanceTools
 from phi.tools.duckduckgo import DuckDuckGo
-import os
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -16,6 +15,8 @@ web_agent = Agent(
     markdown=True,
 )
 
+# web_agent.print_response(" share the latest news for NVDA",stream=True)
+
 finance_agent = Agent(
     name="Finance Agent",
     model=Groq(id="llama3-groq-70b-8192-tool-use-preview"),
@@ -24,7 +25,7 @@ finance_agent = Agent(
     show_tool_calls=True,
     markdown=True,
 )
-finance_agent.print_response("Summarize analyst recommendations for NVDA", stream=True)
+# finance_agent.print_response("Summarize analyst recommendations for NVDA", stream=True)
 
 multi_ai_agent=Agent(
     team=[web_agent,finance_agent],
@@ -34,4 +35,4 @@ multi_ai_agent=Agent(
     markdown=True,
 )
 
-multi_ai_agent.print_response("Summarize analyst recommendation and share the latest news for JITFINFRA",stream=True)
+multi_ai_agent.print_response("Summarize analyst recommendation and share the latest news for NVDA",stream=True)
