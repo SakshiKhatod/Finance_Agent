@@ -35,8 +35,4 @@ multi_ai_agent=Agent(
     markdown=True,
 )
 
-<<<<<<< HEAD
 multi_ai_agent.print_response("Summarize analyst recommendation and share the latest news for NVDA",stream=True)
-=======
-multi_ai_agent.print_response("Summarize analyst recommendation and share the latest news for NVDA",stream=True)
->>>>>>> 21138d60527bb191c4f71dddfddc7f7cfb0b16af
